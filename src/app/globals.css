@@ -1,4 +1,5 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+/* @import 'prism-themes/themes/prism-tomorrow.css'; */
 
 :root {
   --background: #ffffff;
@@ -23,4 +24,12 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Prism VSC Dark Plus 테마를 prose 영역 코드블록에만 적용 */
+@import 'prism-themes/themes/prism-vsc-dark-plus.css';
+.prose pre code,
+.prose code {
+  font-family: 'Fira Mono', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono',
+    'Courier New', monospace;
 }
