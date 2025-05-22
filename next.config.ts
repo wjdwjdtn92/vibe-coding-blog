@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import createMDX from '@next/mdx'
 
 const nextConfig = {
@@ -6,8 +8,12 @@ const nextConfig = {
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [['remark-gfm']],
-    rehypePlugins: [],
+    remarkPlugins: [
+      ['remark-gfm'],
+      ['remark-frontmatter'],
+      ['remark-mdx-frontmatter', { name: 'meta' }],
+    ],
+    rehypePlugins: [['rehype-prism-plus', { ignoreMissing: true }]],
   },
 })
 
